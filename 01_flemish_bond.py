@@ -1,10 +1,14 @@
-
-import os
 import json
+import os
 
 import compas
+from compas.geometry import Box
+from compas.geometry import Frame
+from compas.geometry import Transformation
 from compas.geometry import Translation
-from assembly import Element, Assembly
+
+from assembly import Assembly
+from assembly import Element
 
 HERE = os.path.dirname(__file__)
 DATA = os.path.abspath(os.path.join(HERE, "data"))
@@ -25,6 +29,10 @@ width, length, height = data['brick_dimensions']
 assembly = Assembly()
 
 # ==============================================================================
+# Your code goes here.
+# HINT: Use the examples to see how to re-use the brick/halfbrick elements
+# defined above, and get a transformed instance of each of them as you
+# build up your brick wall. 
 # Your code comes here
 
 
@@ -36,10 +44,11 @@ assembly = Assembly()
 assembly.transform(Translation([-0.26, -0.34, 0]))
 
 # Save assembly to json
-assembly.to_json(PATH_TO)
+assembly.to_json(PATH_TO, pretty=True)
 
 # Run this in rhino
 if compas.IPY:
     from assembly.rhino import AssemblyArtist
-    artist = AssemblyArtist(assembly)
+    artist = AssemblyArtist(assembly, layer='COMPAS::Assembly')
+    artist.clear_layer()
     artist.draw()

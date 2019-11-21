@@ -122,7 +122,7 @@ def plan_moving_and_placing_motion(robot, brick, start_configuration, tolerance_
                                                      attached_collision_meshes=[attached_brick_mesh])
     return moving_trajectory, placing_trajectory
 
-
+# NOTE: If you run Docker Toolbox, change `localhost` to `192.168.99.100`
 with RosClient('localhost') as client:
 
     robot = client.load_robot()
@@ -146,6 +146,7 @@ with RosClient('localhost') as client:
     exclude_keys = [
         vkey for vkey in assembly.network.vertices_where({'is_planned': True})]
     sequence = [k for k in sequence if k not in exclude_keys]
+    print('Sequence:', type(sequence[0]))
 
     for key in sequence:
         print("=" * 30 + "\nCalculating path for brick with key %d." % key)
@@ -169,4 +170,4 @@ with RosClient('localhost') as client:
         assembly.network.set_vertex_attribute(key, 'is_planned', True)
 
         # 8. Save assembly to json after every placed element
-        assembly.to_json(PATH_TO)
+        assembly.to_json(PATH_TO, pretty=True)
