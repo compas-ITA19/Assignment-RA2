@@ -146,7 +146,6 @@ with RosClient('localhost') as client:
     exclude_keys = [
         vkey for vkey in assembly.network.vertices_where({'is_planned': True})]
     sequence = [k for k in sequence if k not in exclude_keys]
-    print('Sequence:', type(sequence[0]))
 
     for key in sequence:
         print("=" * 30 + "\nCalculating path for brick with key %d." % key)
