@@ -48,67 +48,6 @@
         0.03,
         0.014
     ],
-    "brick_tool0": {
-        "_source": {
-            "data": {
-                "frame": {
-                    "point": [
-                        0.084,
-                        -0.015,
-                        -0.03
-                    ],
-                    "xaxis": [
-                        6.123233995736766e-17,
-                        0.0,
-                        1.0
-                    ],
-                    "yaxis": [
-                        0.0,
-                        1.0,
-                        -0.0
-                    ]
-                },
-                "xsize": 0.06,
-                "ysize": 0.03,
-                "zsize": 0.014
-            },
-            "dtype": "compas.geometry.primitives.shapes.box/Box"
-        },
-        "frame": {
-            "point": [
-                0.07,
-                0.0,
-                0.0
-            ],
-            "xaxis": [
-                6.123233995736766e-17,
-                0.0,
-                1.0
-            ],
-            "yaxis": [
-                0.0,
-                1.0,
-                -0.0
-            ]
-        },
-        "gripping_frame": {
-            "point": [
-                0.07,
-                0.0,
-                0.0
-            ],
-            "xaxis": [
-                6.123233995736766e-17,
-                0.0,
-                1.0
-            ],
-            "yaxis": [
-                0.0,
-                1.0,
-                -0.0
-            ]
-        }
-    },
     "halfbrick": {
         "_source": {
             "data": {
@@ -153,7 +92,7 @@
             ]
         }
     },
-    "picking_configuration": {
+    "start_configuration": {
         "types": [
             0,
             0,
